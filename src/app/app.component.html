@@ -30,7 +30,7 @@ py-5">
       text-2xl
       text-white
       font-thin">
-      Function
+      {{ funcT }}
       </div>
       <!-- Number screen -->
       <div class="w-full
@@ -39,7 +39,7 @@ py-5">
       text-6xl
       text-white
       font-thin">
-      100
+      {{ calValue | number }}
       </div>
 
     </div>
@@ -63,7 +63,8 @@ py-5">
             text-white
             text-opacity-50
             text-2xl
-            font-bold"> C </button>
+            font-bold"
+            (click)="onClickButton('C', 'function')"> C </button>
           </div>
           <!-- Percentage button-->
           <div class="w-1/4 border-r border-b border-red-400">
@@ -75,7 +76,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> % </button>
+              font-bold"
+              (click)="onClickButton('%', 'function')"> % </button>
           </div>
           <!-- division button-->
           <div class="w-1/4 border-r border-b border-red-400">
@@ -87,7 +89,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> / </button>
+              font-bold"
+              (click)="onClickButton('/', 'function')"> / </button>
           </div>
         </div>
         <!-- end first button row-->
@@ -103,7 +106,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 7 </button>
+              font-bold"
+              (click)="onClickButton('7', 'number')"> 7 </button>
               
           </div>
           <!-- number 8 button-->
@@ -116,7 +120,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 8 </button>
+              font-bold"
+              (click)="onClickButton('8', 'number')"> 8 </button>
           </div>
           <!-- number 9 button-->
           <div class="w-1/4 border-r border-b border-red-400">
@@ -128,7 +133,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 9 </button>
+              font-bold"
+              (click)="onClickButton('9', 'number')"> 9 </button>
           </div>
            <!-- multiplication button-->
            <div class="w-1/4 border-r border-b border-red-400">
@@ -140,7 +146,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> x </button>
+              font-bold"
+              (click)="onClickButton('x', 'function')"> x </button>
           </div>
         </div>
         <!-- end second button row-->
@@ -156,7 +163,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 4 </button>
+              font-bold"
+              (click)="onClickButton('4', 'number')"> 4 </button>
               
           </div>
           <!-- number 5 button-->
@@ -169,7 +177,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 5 </button>
+              font-bold"
+              (click)="onClickButton('5', 'number')"> 5 </button>
           </div>
           <!-- number 9 button-->
           <div class="w-1/4 border-r border-b border-red-400">
@@ -181,7 +190,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 6 </button>
+              font-bold"
+              (click)="onClickButton('6', 'number')"> 6 </button>
           </div>
            <!-- substract button-->
            <div class="w-1/4 border-r border-b border-red-400">
@@ -193,7 +203,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> - </button>
+              font-bold"
+              (click)="onClickButton('-', 'function')"> - </button>
           </div>
         </div>
         <!-- end third button row-->
@@ -209,7 +220,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 1 </button>
+              font-bold"
+              (click)="onClickButton('1', 'number')"> 1 </button>
               
           </div>
           <!-- number 2 button-->
@@ -222,7 +234,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 2 </button>
+              font-bold"
+              (click)="onClickButton('2', 'number')"> 2 </button>
           </div>
           <!-- number 3 button-->
           <div class="w-1/4 border-r border-b border-red-400">
@@ -234,7 +247,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 3 </button>
+              font-bold"
+              (click)="onClickButton('3', 'number')"> 3 </button>
           </div>
            <!-- add button-->
            <div class="w-1/4 border-r border-b border-red-400">
@@ -246,7 +260,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> + </button>
+              font-bold"
+              (click)="onClickButton('+', 'function')"> + </button>
           </div>
         </div>
         <!-- end fourth button row-->
@@ -262,7 +277,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> 0 </button>
+              font-bold"
+              (click)="onClickButton('0', 'number')"> 0 </button>
               
           </div>
           <!-- dot button-->
@@ -275,7 +291,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> . </button>
+              font-bold"
+              (click)="onClickButton('.', 'number')"> . </button>
           </div>
           <!-- equal button-->
           <div class="w-2/4 border-r border-b border-red-400">
@@ -287,7 +304,8 @@ py-5">
               text-white
               text-opacity-50
               text-2xl
-              font-bold"> = </button>
+              font-bold"
+              (click)="onClickButton('=', 'function')"> = </button>
           </div>   
         </div>
         <!-- end last button row-->
