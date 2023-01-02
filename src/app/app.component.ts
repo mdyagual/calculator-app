@@ -11,10 +11,12 @@ export class AppComponent {
 
   calValue: number = 0;
   showNum: string = 'N/A'
+
   funcT: any = 'NoFunction'
 
   n1: number = 0;
   n2: number = 0;
+  res: number = 0;
 
   onClickButton (val: string, type: any) {
     switch(type){
@@ -24,9 +26,9 @@ export class AppComponent {
       case 'function':
         this.onFunctionClick(val);
         break;  
-
     }
   }
+
 
   onNumberClick(val: string) {
     if(this.showNum !== 'N/A') {
@@ -39,69 +41,64 @@ export class AppComponent {
     this.calValue = parseFloat(this.showNum);
   }
 
-  onFunctionClick(val: string) {
-    
-    switch(val){
+  onFunctionClick(val: string) {  
+    switch(this.funcT){      
       case 'NoFunction':
         this.n1 = this.calValue;
-        this.calValue = 0;
         this.showNum = 'N/A';
-        this.funcT = val;
+        this.funcT = val;  
         break;
 
       default:
         this.n2 = this.calValue;
         this.onFunctionCalculate(val);
-
+        break;
 
     }
+    
 
   }
 
   onFunctionCalculate(op: string){
-     switch(op){
+     switch(this.funcT){
       case '+':
         console.log("Sumar números");
-        this.calValue = this.n1 + this.n2;
+        this.res = this.n1 + this.n2;
         break;
       case '-':
         console.log("Restar números");
-        this.calValue = this.n1 - this.n2;
+        this.res = this.n1 - this.n2;
         break;
       case 'x':
         console.log("Multiplicar números");
-        this.calValue = this.n1 * this.n2;
+        this.res = this.n1 * this.n2;
         break;
       case '/':
         console.log("Dividir números");
-        this.calValue = this.n1 / this.n2;
+        this.res = this.n1 / this.n2;
         break;
       case '%':
-        console.log("Porcentaje del número");
-        this.calValue = this.n1 * 0.01;
+        console.log("Resto de división número");
+        this.res = this.n1 % this.n2;
         break;
-
-      case 'C':
-        console.log("Borrar memoria")
-        this.onFunctionClear();
+      case "=":
+        this.onFunctionEquals();
         break;
-
-      case '=':
-        console.log("Resultado operación")
-        this.onFunctionEquals(op);
-
-        break;
-
-    }
-    this.n1 = this.calValue;
-    this.n2 = 0;
-    this.showNum = 'N/A';
-    this.funcT = op;
     
+    }
+
+    this.calValue = this.res;
+    this.n1 = this.res;
+    this.n2 = 0;
+    this.showNum ='N/A'
+    this.funcT = op;
 
   }
-  onFunctionEquals(op: string){
-    this.funcT = op;
+  onFunctionEquals(){
+    this.n1 = 0;
+    this.n2 = 0;
+    this.funcT = 'NoFunction';
+    this.showNum = 'N/A';
    
   }
 
@@ -111,6 +108,8 @@ export class AppComponent {
     this.showNum = 'N/A';
     this.funcT = 'NoFunction'
     this.calValue = 0;
+    this.res = 0;
+    console.log("Memoria borrada.")
 
   }
  }
